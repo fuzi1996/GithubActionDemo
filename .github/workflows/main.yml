@@ -1,0 +1,17 @@
+on:
+  # schedule:
+  #   - cron:  '1 16 * * *'  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  create_daily_plan_issue:
+    runs-on: ubuntu-latest
+    name: create daily plan issue
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: create daily plan issue action step
+        uses: fuzi1996/create-daily-plan-issue-action@main
+        with:
+          token: ${{secrets.TOKEN}}
